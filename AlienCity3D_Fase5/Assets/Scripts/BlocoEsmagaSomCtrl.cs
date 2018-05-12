@@ -10,6 +10,7 @@ public class BlocoEsmagaSomCtrl : MonoBehaviour {
         asbloco = GetComponent<AudioSource>();
 	}
 
+	//Som do bloco ao tocar
     private void Update()
     {
         if (podeTocar)

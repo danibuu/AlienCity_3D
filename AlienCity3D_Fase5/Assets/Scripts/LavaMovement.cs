@@ -10,7 +10,8 @@ public class LavaMovement : MonoBehaviour {
 	void Start () {
         rend = GetComponent<Renderer>();
 	}
-	
+
+	//movimentação lava
 	void FixedUpdate () {
         float offset = Time.time * scrollSpeed;
         rend.material.SetTextureOffset("_MainTex", new Vector2(offset, 0));

@@ -8,6 +8,7 @@ public class ConfigSom : MonoBehaviour {
 	private float Volume;
 	private int Som;
 
+	//Configuração volume
 	void Start () {
 		if(PlayerPrefs.HasKey("PPVolume"))
 		{

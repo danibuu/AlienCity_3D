@@ -21,6 +21,7 @@ public class insertKeys : MonoBehaviour {
 		
 	}
 
+	//Aproximar da máquina de cartão
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -30,6 +31,7 @@ public class insertKeys : MonoBehaviour {
             Invoke("desativaTexto", 3);
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))

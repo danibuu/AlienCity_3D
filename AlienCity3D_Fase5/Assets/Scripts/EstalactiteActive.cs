@@ -5,6 +5,7 @@ using UnityEngine;
 public class EstalactiteActive : MonoBehaviour {
 
     private Rigidbody rbd;
+
     private Vector3 originalPosition;
 	
 	void Start () {
@@ -12,11 +13,13 @@ public class EstalactiteActive : MonoBehaviour {
         originalPosition = transform.position;
 	}
 
+	//Ativação estalactites
     public void ativar()
     {
             rbd.isKinematic = false;
             Invoke("Resetst", 5);
     }
+
 
     void Resetst()
     {

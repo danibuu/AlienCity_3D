@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Manager : MonoBehaviour {
+	
     private GameObject[] key;
     public Animator porta;
     public bool hasBlue = false;
@@ -10,11 +11,11 @@ public class Manager : MonoBehaviour {
     public bool canDoAction = false;
     public GameObject keylogger;
     private insertKeys inserirChaves;
+
 	// Use this for initialization
 	void Start () {
         key = GameObject.FindGameObjectsWithTag("key");
-
-        //Debug.Log(key.Length);
+        
 	}
 	
 	// Update is called once per frame
@@ -30,31 +31,33 @@ public class Manager : MonoBehaviour {
         }
 	}
 
-    void DoorOpen()
-    {
-        keylogger.GetComponent<Collider>().enabled = false;
-        porta.SetTrigger("open");
-    }
+    
 
     void DoAction()
-    {
-        //Se tiver a chave verde, ativa a imagem dela quando realizar a acao.
+    {        
+		//chave verde
         if (hasGreen)
         {
             inserirChaves.greenKeyInsert.SetActive(true);
             hasGreen = false;
         }
-        //O mesmo para a azul.
+        //chave azul.
         if (hasBlue)
         {
             inserirChaves.blueKeyInsert.SetActive(true);
             hasBlue = false;
         }
-        //Se tiver as duas, abre a porta ao inserir as chaves.
+        //Abre a porta com as chaves.
         if (VarTemp.holdKeys == key.Length)
         {
             VarTemp.holdKeys = 0;
             DoorOpen();
         }
     }
+
+	void DoorOpen()
+	{
+		keylogger.GetComponent<Collider>().enabled = false;
+		porta.SetTrigger("open");
+	}
 }

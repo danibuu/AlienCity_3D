@@ -12,6 +12,7 @@ public class getKey : MonoBehaviour {
         GM = Manager.GetComponent<Manager>();
     }
 
+	//Pegar chaves
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
